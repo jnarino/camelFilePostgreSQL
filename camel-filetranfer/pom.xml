@@ -44,6 +44,10 @@
 			<artifactId>camel-blueprint</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.apache.aries.blueprint</groupId>
+			<artifactId>org.apache.aries.blueprint.core</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
@@ -59,17 +63,22 @@
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-sql</artifactId>
 		</dependency>
-	<!-- <dependency> -->
-	<!-- <groupId>com.oracle</groupId> -->
-	<!-- <artifactId>ojdbc6-osgi</artifactId> -->
-	<!-- <version>6.11.1070</version> -->
-	<!-- </dependency> -->
-	<!-- <dependency> -->
-	<!-- <groupId>com.microsoft.sqlserver</groupId> -->
-	<!-- <artifactId>sqljdbc4</artifactId> -->
-	<!-- <version>4.0</version> -->
-	<!-- <scope>provided</scope> -->
-	<!-- </dependency> -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.4.1212</version>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>com.oracle</groupId> -->
+		<!-- <artifactId>ojdbc6-osgi</artifactId> -->
+		<!-- <version>6.11.1070</version> -->
+		<!-- </dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.microsoft.sqlserver</groupId> -->
+		<!-- <artifactId>sqljdbc4</artifactId> -->
+		<!-- <version>4.0</version> -->
+		<!-- <scope>provided</scope> -->
+		<!-- </dependency> -->
 		<dependency>
 			<groupId>org.apache.aries.blueprint</groupId>
 			<artifactId>org.apache.aries.blueprint.core</artifactId>
