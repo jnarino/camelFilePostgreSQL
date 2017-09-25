@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
-    xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0 http://aries.apache.org/schemas/blueprint-cm/blueprint-cm-1.1.0.xsd              http://www.osgi.org/xmlns/blueprint/v1.0.0 https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
-    <bean class="org.apache.commons.dbcp.BasicDataSource"
-        destroy-method="close" id="dataSourceEafitPostgres">
-        <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://10.131.137.206:5432/postgres"/>
-        <property name="username" value="postgres"/>
-        <property name="password" value="redhat"/>
-    </bean>
-    <bean class="org.apache.camel.component.sql.SqlComponent" id="sqlPostgres">
-        <property name="dataSource" ref="dataSourceEafitPostgres"/>
-    </bean>
-    <bean class="co.com.telematica.filetranfer.ruta.Ruta" id="ruta"/>
-    <camelContext id="_context1" xmlns="http://camel.apache.org/schema/blueprint">
-        <propertyPlaceholder id="properties" location="register.properties"/>
-        <routeBuilder ref="ruta"/>
-    </camelContext>
+	xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0 http://aries.apache.org/schemas/blueprint-cm/blueprint-cm-1.1.0.xsd              http://www.osgi.org/xmlns/blueprint/v1.0.0 https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+	<bean class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close" id="dataSourceEafitPostgres">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url"
+			value="jdbc:postgresql://10.131.137.150:5432/postgres" />
+		<property name="username" value="jnarino" />
+		<property name="password" value="redhat" />
+	</bean>
+	<bean class="org.apache.camel.component.sql.SqlComponent" id="sqlPostgres">
+		<property name="dataSource" ref="dataSourceEafitPostgres" />
+	</bean>
+	<bean class="co.com.telematica.filetranfer.ruta.Ruta" id="ruta" />
+	<camelContext id="_context1"
+		xmlns="http://camel.apache.org/schema/blueprint">
+		<propertyPlaceholder id="properties" location="register.properties" />
+		<routeBuilder ref="ruta" />
+	</camelContext>
 </blueprint>
